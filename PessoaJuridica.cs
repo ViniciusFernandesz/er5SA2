@@ -6,9 +6,19 @@ namespace EncontroRemoto
         
         public string? razaoSocial { get; set; } 
         
-        public override void PagarImposto(float salario)
+        public override double PagarImposto(float rendimento)
         {
-            
+             if (rendimento <= 5000)
+            {
+                return (rendimento/100)*6;
+
+            }else if (rendimento > 5000 && rendimento <= 10000)
+            {
+                return (rendimento/100)*8; //*0,08  (rendimento/100)*8;   rendimento * 1,08
+                
+            }else{
+                return (rendimento/100)*10;
+            }
         }
 
             public bool ValidarCNPJ(string cnpj){

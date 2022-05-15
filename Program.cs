@@ -48,11 +48,14 @@ namespace EncontroRemoto
 
                         novapf.endereco = endPF;
                         novapf.cpf = "123456789";
+                        novapf.rendimento = 1500;
                         novapf.dataNascimento = new DateTime(1994, 09, 22);
                         novapf.nome = "Vinicius Fernandes dos Santos";
 
                         PessoaFisica pf = new PessoaFisica();
                         //pf.ValidarDataNascimento(pf.dataNascimento);
+
+                         Console.WriteLine(pf.PagarImposto(novapf.rendimento).ToString("N2"));
 
                         
                         bool idadeValida = pf.ValidarDataNascimento(novapf.dataNascimento);
@@ -81,13 +84,15 @@ namespace EncontroRemoto
 
                         endPJ.logradouro = "Rua Nova";
                         endPJ.numero = 745;
-                        endPJ.complemento = "Proximo a igreja Santa Terezinha";
+                        endPJ.complemento = "Perto da igreja Santa Terezinha";
                         endPJ.enderecoComercial = true;
 
                         novapj.endereco = endPJ;
                         novapj.cnpj = "1234567890001";
+                        novapj.rendimento = 8000;
                         novapj.razaoSocial = "Pessoa Juridica";
                         
+                        Console.WriteLine(pj.PagarImposto(novapj.rendimento).ToString("N2"));
                         break;
 
                     case "0":
